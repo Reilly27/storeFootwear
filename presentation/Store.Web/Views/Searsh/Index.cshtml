@@ -1,0 +1,22 @@
+﻿@model Store.Footwear[]
+
+@{
+    ViewData["Title"] = "Результаты поиска";
+}
+
+<h1>Результаты поиска</h1>
+@if (Model.Length == 0)
+{
+    <p>Ничего не найдено</p>
+}
+else
+{
+<ul>
+    @foreach (var footwear in Model)
+    {
+        <li><a href="@Url.Action("Index", "Description", new {id =footwear.Id })">@footwear.Title</a></li>
+    }
+
+</ul>
+}
+

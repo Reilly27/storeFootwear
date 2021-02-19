@@ -1,0 +1,13 @@
+﻿@model Footwear
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<h1>@Model.Title</h1>
+<p><strong>@Model.Author</strong></p>
+<p>@Model.Description</p>
+<p>Цена: <strong>@Model.Price</strong></p>
+<form action="@Url.Action("Add", "Cart" )" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <button class="btn btn-outline-success" type="submit">Купить</button>
+</form>
